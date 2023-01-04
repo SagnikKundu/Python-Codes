@@ -1,2 +1,2 @@
-Hi.
-This is a demo txt file.
+hi.
+this is a demo txt file.

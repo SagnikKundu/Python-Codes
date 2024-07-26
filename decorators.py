@@ -28,7 +28,7 @@ def greet() :
     print('John Doe') 
 
 greet()
- 
+
 # ================================================
 
 def decorator(func) :

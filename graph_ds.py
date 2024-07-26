@@ -12,23 +12,23 @@ class Graph():
         
         return self.graph_dict
 
-    def get_path(self, start, end):
-        path = [start]
+    def get_paths(self, start, end, path=[]):
+        path = path + [start]
         all_paths = []
-        
+
         if start == end :
             return [path]
-        
-        if start not in self.graph_dict :
-            return []
-        
-        for node in self.graph_dict[start] :
-            if node not in path :
-                new_paths = (self.get_path(node, end))
-            
-            all_paths += new_paths
 
-        return all_paths
+        if start not in self.graph_dict:
+            return []
+
+        for node in self.graph_dict[start]:
+            if node not in path:
+                p = self.get_paths(node, end, path)
+                for paths in p:
+                    all_paths.append(paths)
+        
+        return all_paths   
 
 
 if __name__ == '__main__':
@@ -42,6 +42,7 @@ if __name__ == '__main__':
         ('London', 'Toronto')
     ]
     graph = Graph(flight_routes)
-    print(graph.build_graph())
+    print(f'Graph :\n{graph.build_graph()}\n')
 
-    print(graph.get_path('Mumbai', 'New York'))
+    source, destination = 'Mumbai', 'New York'
+    print(f'All possible path between {source} and {destination} are :\n{graph.get_paths(source, destination)}\n')

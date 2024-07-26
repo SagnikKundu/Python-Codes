@@ -1,0 +1,95 @@
+1. Let’s explore the differences between Python packages, modules, and methods:
+	Python Modules:
+		A Python module is any single Python file with a .py extension. It contains code that can be imported into other Python scripts or modules.
+		Modules often define functions, classes, and variables that are intended to be used in other files.
+		Example: Suppose you have a file named areas.py containing functions to calculate the area of various shapes. This file forms a module called areas.
+	Python Packages:
+		A Python package is a collection of related modules organized in a directory.
+		To create a package, you need:
+		Multiple Python files (modules) related to a specific functionality.
+		An __init__.py file (which can be empty) in the package directory. This file distinguishes a package from a regular directory containing Python files.
+		Example: If you add another module for calculating the volumes of shapes (let’s call it volumes.py), save it in the same directory as areas.py, and create an __init__.py file, you now have a Python package.
+	Python Methods:
+		Methods are functions defined within classes or objects.
+		They operate on data associated with the class or object.
+		Example: In Python, you can define a method called calculate_area() within a Rectangle class to compute the area of a rectangle.
+	In summary:
+		Modules are individual Python files.
+		Packages are collections of related modules organized in directories.
+		Methods are functions defined within classes or objects.
+	
+2. Python is an interpreted language. Let me explain the difference:
+	Interpreted Languages:
+		- In an interpreted language, the code is executed line by line by an interpreter at runtime.
+		- There is no separate compilation step; the interpreter reads the source code directly and executes it.
+		- Python, JavaScript, Ruby, and PHP are examples of interpreted languages.
+		- Advantages: Easy to debug, platform-independent (since the interpreter adapts to the host system), and allows dynamic typing.
+		- Disadvantages: Generally slower execution compared to compiled languages.
+	Compiled Languages:
+		- In a compiled language, the source code is first translated into machine code (binary) by a compiler.
+		- The resulting binary can be executed directly by the computer’s CPU.
+		- Examples of compiled languages include C, C++, and Rust.
+		- Advantages: Faster execution (since there’s no interpretation step), better optimization, and platform-specific binaries.
+		- Disadvantages: Requires a separate compilation step, less dynamic (static typing), and potentially harder to debug.
+	So, Python falls into the category of interpreted languages. When you run a Python script, the Python interpreter reads the code and executes it without creating a separate compiled binary. 
+
+3. Taking command line arguments in Python:
+	Using argparse
+		import argparse
+		parser = argparse.ArgumentParser(description = 'Arguments to calculate sum.')
+		parser.add_argument('csrf', type=str, help='csrf token') # python3 test.py <give the csrf token directly>
+		parser.add_argument('--csrf', type=str, help='csrf token') # python3 test.py -- csrf <now give the csrf token>
+		args = parser.parse_args()
+	
+	
+4. The self keyword is used to reference to the current instance of the class, and is used to access variables that belongs to the class.
+
+5. The __init__ is constructor in python which is used to initialize a object's state by assigning value to its properties.
+
+6. Python OOPS :
+	1. Class and objects : A blueprint for creating objects (a particular data structure). An instance of a class.
+	2. Polymorphism  	 : Polymorphism means the same function name (but different signatures) being used for different types. 
+	3. Abstraction    	 : Hiding the complex implementation details and showing only the essential features of the object.
+	4. Inheritance 	 	 : Allows one class to inherit attributes and methods from another class.
+	5. Encapsulation 	 : Buinding of data and methods that operate on the data within as one unit.
+
+7. What is a python framwork?
+	A Python framework is a collection of Python modules that provides a set of common functionality that can be used as a structure for building applications of any type.
+
+8. API and REST API:
+	API - Stands for Application Programming Interface. It's a way in which computers talk to each other.
+	REST - Most common API used by computers and mobile servers is REST. REST stands for REpresentational State Transfer.
+		   POST - CREATE, GET - READ, PUT - UPDATE, DELETE - DELETE.
+
+9. Shallow copy and Deep copy in python.
+	Shallow Copy: 	
+	- A shallow copy creates a new object which stores the reference of the original elements.
+	- It doesn't create new copies of the nested objects (like lists inside lists).
+	- Modifying a nested object in the shallow copy will affect the original object and vice versa.
+	- You can create a shallow copy using slicing ([:]), list(), or copy.copy().
+
+		import copy
+
+		a = [[1, 2], [3, 4]]
+		b = copy.copy(a)
+
+		b[0][0] = 'X'
+		print(a)  # Output: [['X', 2], [3, 4]]
+		print(b)  # Output: [['X', 2], [3, 4]]
+
+	Deep Copy:
+	- A deep copy creates a new object with new copies of all the nested objects.
+	- It recursively copies the contents of the nested objects.
+	- Modifying a nested object in the deep copy will not affect the original object and vice versa.
+	- You can create a deep copy using copy.deepcopy().
+
+		import copy
+
+		a = [[1, 2], [3, 4]]
+		b = copy.deepcopy(a)
+
+		b[0][0] = 'X'
+		print(a)  # Output: [[1, 2], [3, 4]]
+		print(b)  # Output: [['X', 2], [3, 4]]
+
+10. More questions: https://docs.google.com/document/d/1N_yHvhhNlGTa74l149DxfUsz4tFSsfuCUa4FR1kdSWs/edit#heading=h.7yaydfia3bim
